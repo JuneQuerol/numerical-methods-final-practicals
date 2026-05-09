@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Methods — Final Practical Exam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="exam-container">
+        <header class="exam-header">
+            <div class="header-main">
+                <div class="logo-placeholder">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="institution-details">
+                    <h1>Numerical Methods — Final Practical Exam</h1>
+                    <p>Academic Year: 2025-2026 | 2nd Semester | CPE 6</p>
+                </div>
+            </div>
+            <div class="student-info">
+                <div class="info-row">
+                    <span>Name: ______________________________</span>
+                    <span>Year & Section: ____________________</span>
+                </div>
+                <div class="info-row">
+                    <span>Proctor: ______________________________</span>
+                    <span>Score: _____________________</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="instructions">
+            <h2><i class="fas fa-info-circle"></i> Instructions</h2>
+            <p>Create a single Excel workbook named <strong>LastName_FinalExam.xlsx</strong>. Each problem must be on its own sheet, labeled clearly (e.g., <code>P1_Integration</code>). All values must be computed via Excel formulas — manual entries will receive zero credit. Show all intermediate columns.</p>
+        </section>
+
+        <main>
+            <!-- Part 1 -->
+            <section class="problem-card">
+                <div class="problem-header">
+                    <span class="part-label">Part 1</span>
+                    <h3>Numerical Integration — Trapezoidal and Simpson’s Rules (50 Points)</h3>
+                </div>
+                <div class="problem-content">
+                    <p>Evaluate the integral of $f(x) = 0.2 + 25x - 200x^2 + 675x^3 - 900x^4 + 400x^5$ from $a = 0$ to $b = 0.8$ using $n = 10$ segments. The true analytical solution is exactly <strong>1.640533</strong>.</p>
+                    
+                    <div class="scoring-breakdown">
+                        <h4>Scoring Breakdown</h4>
+                        <ul>
+                            <li><strong>Data Generation Table (10 pts):</strong> Evaluate $f(x)$ for $n = 10$ segments.</li>
+                            <li><strong>Trapezoidal Rule (15 pts):</strong> Calculate using multiple-application formula.</li>
+                            <li><strong>Simpson’s 1/3 Rule (15 pts):</strong> Calculate using multiple-application formula.</li>
+                            <li><strong>True Percent Relative Error (10 pts):</strong> Compute $\epsilon_t$ for both methods.</li>
+                        </ul>
+                    </div>
+
+                    <div class="hint-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p><strong>Step Size (h):</strong> Compute $h = (b - a) / n$ dynamically. Simpson’s multiplier pattern is 1, 4, 2, 4, ..., 4, 1.</p>
+                    </div>
+
+                    <h4>Required Table Layout</h4>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>i</th>
+                                <th>xᵢ</th>
+                                <th>f(xᵢ)</th>
+                                <th>Trap. Mult.</th>
+                                <th>Simpson’s Mult.</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0</td><td>0.00</td><td></td><td>1</td><td>1</td><td></td></tr>
+                            <tr><td>1</td><td>0.08</td><td></td><td>2</td><td>4</td><td></td></tr>
+                            <tr><td>...</td><td>...</td><td></td><td>2</td><td>...</td><td></td></tr>
+                            <tr><td>10</td><td>0.80</td><td></td><td>1</td><td>1</td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Part 2 -->
+            <section class="problem-card">
+                <div class="problem-header">
+                    <span class="part-label">Part 2</span>
+                    <h3>Ordinary Differential Equations — Runge-Kutta Method (50 Points)</h3>
+                </div>
+                <div class="problem-content">
+                    <p>Solve the following initial value problem from $x = 0$ to $x = 2$ using step size $h = 0.5$:</p>
+                    <div class="equation">
+                        $\frac{dy}{dx} = -2x^3 + 12x^2 - 20x + 8.5$
+                    </div>
+                    <p>Initial condition: $y(0) = 1$</p>
+
+                    <div class="scoring-breakdown">
+                        <h4>Scoring Breakdown</h4>
+                        <ul>
+                            <li><strong>RK4 Increments Table (25 pts):</strong> Correctly compute $k_1, k_2, k_3, k_4$ for each step.</li>
+                            <li><strong>Iteration Table (15 pts):</strong> Calculate $y_{i+1}$ using the weighted average.</li>
+                            <li><strong>Excel Chart (10 pts):</strong> Create a Scatter plot with smooth lines connecting $(x, y)$ points.</li>
+                        </ul>
+                    </div>
+
+                    <div class="hint-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p><strong>Function Dependency:</strong> The ODE depends only on $x$. Structure all four $k$ formulas to demonstrate proper RK4 logic.</p>
+                    </div>
+
+                    <h4>Required Table Layout</h4>
+                    <table class="exam-table">
+                        <thead>
+                            <tr>
+                                <th>Step (i)</th>
+                                <th>xᵢ</th>
+                                <th>yᵢ</th>
+                                <th>k₁</th>
+                                <th>k₂</th>
+                                <th>k₃</th>
+                                <th>k₄</th>
+                                <th>yᵢ₊₁</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>0</td><td>0.0</td><td>1.000</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td>1</td><td>0.5</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="rubric">
+                <h3>Grading Rubric</h3>
+                <table class="rubric-table">
+                    <thead>
+                        <tr>
+                            <th>Criteria</th>
+                            <th>Excellent (100%)</th>
+                            <th>Satisfactory (75%)</th>
+                            <th>Needs Improvement (50%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Accuracy</td>
+                            <td>Results match theoretical solutions.</td>
+                            <td>Minor calculation errors.</td>
+                            <td>Significant logical errors.</td>
+                        </tr>
+                        <tr>
+                            <td>Excel Logic</td>
+                            <td>Dynamic formulas & cell references.</td>
+                            <td>Some values hard-coded.</td>
+                            <td>Mostly manual entry.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <footer class="exam-footer">
+            <div class="signatures">
+                <div class="sig-box">
+                    <p>Prepared by:</p>
+                    <strong>ENGR. JUNE VERGEL P. QUEROL</strong>
+                    <span>Instructor</span>
+                </div>
+                <div class="sig-box">
+                    <p>Approved by:</p>
+                    <strong>WINNIE T. CANCEJO, PH. D.</strong>
+                    <span>VP for Academic Affairs</span>
+                </div>
+            </div>
+            <div class="actions">
+                <a href="LastName_FinalExam_Key.xlsx" class="download-btn" download>
+                    <i class="fas fa-file-excel"></i> Download Solution Key
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- MathJax for equations -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</body>
+</html>
