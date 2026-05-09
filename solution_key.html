@@ -123,31 +123,7 @@
                     </div>
                 </div>
             </section>
-        </section>
-
-        <!-- Part 3 Solution -->
-        <section class="problem-card">
-            <div class="problem-header">
-                <span class="part-label">Part 3</span>
-                <h3>Conceptual Analysis: Expected Explanations</h3>
-            </div>
-            <div class="problem-content">
-                <div class="scoring-breakdown">
-                    <ol>
-                        <li><strong>Accuracy:</strong> Simpson's 1/3 uses parabolic (2nd-order) interpolation, whereas Trapezoidal uses linear (1st-order), allowing it to better follow the curve of higher-order polynomials.</li>
-                        <li><strong>Step Size:</strong> Decreasing $h$ reduces the local truncation error, leading to a significant decrease in the total approximate and true error.</li>
-                        <li><strong>Multipliers:</strong> The pattern reflects the overlapping of parabolic segments; inner points are shared by two parabolas, and odd-indexed points are weighted more heavily due to Simpson's derivation from Simpson's rule for three points.</li>
-                        <li><strong>RK4 vs Euler:</strong> RK4 has a much higher order of accuracy ($O(h^4)$ vs $O(h)$), meaning the error decreases much faster as the step size is reduced.</li>
-                        <li><strong>$k_1$:</strong> It represents the slope at the beginning of the interval ($x_i, y_i$), identical to the Euler method's slope.</li>
-                        <li><strong>Weighting:</strong> $k_2$ and $k_3$ are slopes evaluated at the midpoint; giving them more weight provides a better representative average slope for the entire interval.</li>
-                        <li><strong>Y-Dependency:</strong> If y-dependent, the $k$ formulas would need to include the updated $y$ values (e.g., $y_i + 0.5h \cdot k_1$) in the function evaluation, making the steps coupled.</li>
-                        <li><strong>True Value:</strong> It provides a benchmark to calculate the Global Truncation Error (True Error), allowing us to objectively measure the performance of different numerical methods.</li>
-                        <li><strong>Truncation Error:</strong> Local truncation error (the error made in a single step due to the approximation of the Taylor series).</li>
-                        <li><strong>Application:</strong> Calculating the heat distribution in a rod (Integration) or modeling the trajectory of a projectile with air resistance (ODEs).</li>
-                    </ol>
-                </div>
-            </div>
-        </section>
+        </main>
 
         <footer class="exam-footer">
             <div class="actions">

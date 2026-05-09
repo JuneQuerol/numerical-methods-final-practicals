@@ -178,21 +178,6 @@ body {
     border-radius: 4px;
 }
 
-.explanation-list {
-    margin-top: 15px;
-    padding-left: 25px;
-}
-
-.explanation-list li {
-    margin-bottom: 12px;
-    font-weight: bold;
-    color: var(--secondary-color);
-}
-
-.explanation-list li strong {
-    color: var(--primary-color);
-}
-
 .rubric-table {
     width: 100%;
     border-collapse: collapse;
