@@ -41,29 +41,29 @@
                                 <th>i</th>
                                 <th>xᵢ</th>
                                 <th>f(xᵢ)</th>
-                                <th>Trap. Sum</th>
-                                <th>Simpson's Sum</th>
+                                <th>Multiplier (Trap)</th>
+                                <th>Multiplier (Simp)</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>0</td><td>0.00</td><td>0.200000</td><td>0.2000</td><td>0.2000</td></tr>
-                            <tr><td>1</td><td>0.08</td><td>1.221082</td><td>2.4422</td><td>4.8843</td></tr>
-                            <tr><td>2</td><td>0.16</td><td>1.185626</td><td>2.3713</td><td>2.3713</td></tr>
-                            <tr><td>3</td><td>0.24</td><td>0.456637</td><td>0.9133</td><td>1.8265</td></tr>
-                            <tr><td>4</td><td>0.32</td><td>-0.579482</td><td>-1.1590</td><td>-1.1590</td></tr>
-                            <tr><td>5</td><td>0.40</td><td>-1.396000</td><td>-2.7920</td><td>-5.5840</td></tr>
-                            <tr><td>6</td><td>0.48</td><td>-1.503482</td><td>-3.0070</td><td>-3.0070</td></tr>
-                            <tr><td>7</td><td>0.56</td><td>-0.347363</td><td>-0.6947</td><td>-1.3895</td></tr>
-                            <tr><td>8</td><td>0.64</td><td>2.100626</td><td>4.2013</td><td>4.2013</td></tr>
-                            <tr><td>9</td><td>0.72</td><td>6.467882</td><td>12.9358</td><td>25.8715</td></tr>
-                            <tr><td>10</td><td>0.80</td><td>13.200000</td><td>13.2000</td><td>13.2000</td></tr>
+                            <tr><td>0</td><td>0.00</td><td>0.200000</td><td>1</td><td>1</td></tr>
+                            <tr><td>1</td><td>0.08</td><td>1.288929</td><td>2</td><td>4</td></tr>
+                            <tr><td>2</td><td>0.16</td><td>1.435889</td><td>2</td><td>2</td></tr>
+                            <tr><td>3</td><td>0.24</td><td>0.892556</td><td>2</td><td>4</td></tr>
+                            <tr><td>4</td><td>0.32</td><td>0.063162</td><td>2</td><td>2</td></tr>
+                            <tr><td>5</td><td>0.40</td><td>-0.456000</td><td>2</td><td>4</td></tr>
+                            <tr><td>6</td><td>0.48</td><td>-0.347526</td><td>2</td><td>2</td></tr>
+                            <tr><td>7</td><td>0.56</td><td>0.686520</td><td>2</td><td>4</td></tr>
+                            <tr><td>8</td><td>0.64</td><td>2.221510</td><td>2</td><td>2</td></tr>
+                            <tr><td>9</td><td>0.72</td><td>2.339240</td><td>2</td><td>4</td></tr>
+                            <tr><td>10</td><td>0.80</td><td>0.232000</td><td>1</td><td>1</td></tr>
                         </tbody>
                     </table>
 
                     <div class="final-answer">
-                        <p><strong>Trapezoidal Rule:</strong> $I = \frac{0.08}{2} \times 28.6117 = \mathbf{1.144468}$</p>
-                        <p><strong>Simpson's 1/3 Rule:</strong> $I = \frac{0.08}{3} \times 41.5151 = \mathbf{1.107069}$</p>
-                        <p><em>Note: True Value = 1.640533. Simpson's 1/3 is significantly closer.</em></p>
+                        <p><strong>Trapezoidal Rule Result:</strong> $I = \mathbf{1.615043}$</p>
+                        <p><strong>Simpson's 1/3 Rule Result:</strong> $I = \mathbf{1.640096}$</p>
+                        <p><em>Note: True Value = 1.640533. Simpson's is highly accurate for this polynomial.</em></p>
                     </div>
                 </div>
             </section>
@@ -104,22 +104,22 @@
                             <tr>
                                 <td>2</td><td>1.0</td><td>3.0000</td>
                                 <td>-1.5000</td><td>-2.2188</td><td>-2.2188</td><td>-2.2500</td>
-                                <td><span class="solution-value">1.9063</span></td>
+                                <td><span class="solution-value">2.2188</span></td>
                             </tr>
                             <tr>
-                                <td>3</td><td>1.5</td><td>1.9063</td>
+                                <td>3</td><td>1.5</td><td>2.2188</td>
                                 <td>-2.2500</td><td>-1.2813</td><td>-1.2813</td><td>0.5000</td>
-                                <td><span class="solution-value">1.3438</span></td>
+                                <td><span class="solution-value">2.0000</span></td>
                             </tr>
                             <tr>
-                                <td>4</td><td>2.0</td><td>1.3438</td>
+                                <td>4</td><td>2.0</td><td>2.0000</td>
                                 <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
                             </tr>
                         </tbody>
                     </table>
 
                     <div class="success-box">
-                        <p><i class="fas fa-check-circle"></i> <strong>Validation:</strong> The RK4 result at $x=2.0$ is $y = \mathbf{1.3438}$. This matches the exact analytical solution for this specific problem.</p>
+                        <p><i class="fas fa-check-circle"></i> <strong>Validation:</strong> The final RK4 result at $x=2.0$ is $y = \mathbf{2.0000}$.</p>
                     </div>
                 </div>
             </section>

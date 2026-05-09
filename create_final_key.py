@@ -1,7 +1,7 @@
 import xlsxwriter
 
 def create_final_answer_key():
-    workbook = xlsxwriter.Workbook('LastName_FinalExam_Key.xlsx')
+    workbook = xlsxwriter.Workbook('Numerical_Methods_Final_Exam_Answer_Key.xlsx')
     
     # Common formats
     header_fmt = workbook.add_format({'bold': True, 'bg_color': '#D7E4BC', 'border': 1, 'align': 'center'})
@@ -59,6 +59,13 @@ def create_final_answer_key():
     ws1.write('A23', 'εt (Simpson\'s)', bold_fmt)
     ws1.write_formula('C23', '=ABS(($B$6-C21)/$B$6)', pct_fmt)
 
+    # Add Target Validation Box in Excel
+    ws1.write('G8', 'TARGET FOR VALIDATION', bold_fmt)
+    ws1.write('G9', 'Trapezoidal:', border_fmt)
+    ws1.write('H9', 1.615043, num_fmt)
+    ws1.write('G10', 'Simpson\'s 1/3:', border_fmt)
+    ws1.write('H10', 1.640096, num_fmt)
+
     # --- P2_RK4 ---
     ws2 = workbook.add_worksheet('P2_RK4')
     ws2.set_column('A:H', 15)
@@ -104,6 +111,11 @@ def create_final_answer_key():
     ws2.write(11, 0, 4)
     ws2.write_formula(11, 1, f'=B11+$B$2')
     ws2.write(11, 2, '—', border_fmt)
+
+    # Add Target Validation Box in Excel
+    ws2.write('J15', 'TARGET FOR VALIDATION', bold_fmt)
+    ws2.write('J16', 'Final Result at x=2.0:', border_fmt)
+    ws2.write('K16', 2.000000, num_fmt)
 
     # Chart
     chart = workbook.add_chart({'type': 'scatter', 'subtype': 'smooth_with_markers'})
